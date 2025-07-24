@@ -1,0 +1,9 @@
+# RewriteEngine 활성화
+RewriteEngine On
+
+# 기존 파일이나 디렉토리가 존재하면 요청을 그대로 처리
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# 파일이나 디렉토리가 없으면 index.html로 리디렉션
+RewriteRule ^ index.html [L]
